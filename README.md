@@ -14,4 +14,5 @@ such as build/db/components.db
 
 ## eg
 
-![](png/test.png)
+![](png/test1.png)
+![](png/test2.png)
