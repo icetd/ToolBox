@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1097</width>
+    <height>583</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1097</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionHome"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>工具</string>
+    </property>
+    <addaction name="actionManagerComponent"/>
+    <addaction name="actionChangeTheme"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTool"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionHome"/>
+   <addaction name="separator"/>
+   <addaction name="actionManagerComponent"/>
+   <addaction name="separator"/>
+   <addaction name="actionChangeTheme"/>
+  </widget>
+  <action name="actionHome">
+   <property name="icon">
+    <iconset resource="../res/icon.qrc">
+     <normaloff>:/icon/Icon/home.png</normaloff>:/icon/Icon/home.png</iconset>
+   </property>
+   <property name="text">
+    <string>主页</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../res/icon.qrc">
+     <normaloff>:/icon/Icon/exit.png</normaloff>:/icon/Icon/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="actionChangeTheme">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../res/icon.qrc">
+     <normaloff>:/icon/Icon/theme.png</normaloff>:/icon/Icon/theme.png</iconset>
+   </property>
+   <property name="text">
+    <string>切换主题</string>
+   </property>
+  </action>
+  <action name="actionManagerComponent">
+   <property name="icon">
+    <iconset resource="../res/icon.qrc">
+     <normaloff>:/icon/Icon/searchComponent.png</normaloff>:/icon/Icon/searchComponent.png</iconset>
+   </property>
+   <property name="text">
+    <string>元件管理</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../res/icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

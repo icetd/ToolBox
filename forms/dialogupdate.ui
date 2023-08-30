@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogUpdate</class>
+ <widget class="QDialog" name="DialogUpdate">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>352</width>
+    <height>535</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_id">
+       <property name="text">
+        <string>ID</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_id"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_value">
+       <property name="text">
+        <string>数值</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_value"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_codeName">
+       <property name="text">
+        <string>代号</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_codeName"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_footPrint">
+       <property name="text">
+        <string>封装</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_footPrint"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_other1">
+       <property name="text">
+        <string>其他1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_other1"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_other2">
+       <property name="text">
+        <string>其他2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_other2"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_other3">
+       <property name="text">
+        <string>其他3</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_other3"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_boxName">
+       <property name="text">
+        <string>盒号</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cb_boxName">
+       <item>
+        <property name="text">
+         <string>PST-A</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PST-B</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PST-C</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PST-D</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PST-E</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>WQ</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-A</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-B</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-C</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-D</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-E</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-F</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-G</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-H</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-I</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-J</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-K</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-L</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-M</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-N</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-O</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-P</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-Q</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-R</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-S</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-T</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-U</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-V</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-W</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-X</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-Y</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YS-Z</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>大箱子</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_lineNumber">
+       <property name="text">
+        <string>行号</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cb_lineNumber">
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_colimnNumber">
+       <property name="text">
+        <string>列号</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cb_colimnNumber">
+       <item>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,2">
+     <item>
+      <widget class="QLabel" name="lb_jlcNumber">
+       <property name="text">
+        <string>嘉立创编号</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_jlcNumber"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_10">
+     <item>
+      <widget class="QPushButton" name="btn_ok">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>确认</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_cancel">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>取消</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

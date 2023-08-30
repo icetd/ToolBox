@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>Icon/home.png</file>
+    <file>Icon/exit.png</file>
+    <file>Icon/theme.png</file>
+    <file>Icon/img.png</file>
+    <file>Icon/addComponent.png</file>
+    <file>Icon/deleteComponent.png</file>
+    <file>Icon/searchComponent.png</file>
+    <file>Icon/changeComponent.png</file>
+    <file>Icon/download.png</file>
+    <file>Icon/upload.png</file>
+  </qresource>
+</RCC>
