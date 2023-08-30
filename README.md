@@ -12,15 +12,6 @@ camke .. && make -j8
 mkdir build && cd build
 Then open the xxx.sln with VisualStudio
 ```
-
-## Use
-```
-cp your db to the build
-
-such as build/db/components.db
-
-```
-
 ## eg
 
 ![](png/test1.png)

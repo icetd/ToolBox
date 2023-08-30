@@ -119,3 +119,8 @@ target_link_libraries(${PROJECT_NAME}
     ${QT_QTSQL_LIBRARIES}
 )
 
+# out set
+set (OUT_BIN ${CMAKE_BINARY_DIR})
+
+file(COPY config/config.ini DESTINATION config)
+file(COPY db/components.db DESTINATION db)
