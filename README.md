@@ -2,7 +2,7 @@
 
 Dependens on qt5 env
 
-### linux
+### LINUX
 ```
 mkdir build && cd build
 camke .. && make -j8
