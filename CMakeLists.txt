@@ -105,7 +105,7 @@ endif()
 
 
 if (WIN32) 
-    add_executable(${PROJECT_NAME} ${SRC_FILES} ${INC_FILES} ${FORMS_FILES} ${RES_FILES})
+    add_executable(${PROJECT_NAME} WIN32 ${SRC_FILES} ${INC_FILES} ${FORMS_FILES} ${RES_FILES})
 elseif(UNIX)
     add_executable(${PROJECT_NAME} ${SRC_FILES} ${INC_FILES} ${FORMS_FILES} ${RES_FILES})
 endif()
