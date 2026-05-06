@@ -33,6 +33,10 @@ public:
     // 删除元件
     void delComponents(QString id);
 
+    QString SqlManager::getNextComponentId();
+
+    void reorderIds();
+
 private:
     QSqlDatabase m_db;
 };

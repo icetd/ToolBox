@@ -15,6 +15,8 @@ public:
     explicit DialogUpdate(QWidget *parent = nullptr);
     ~DialogUpdate();
     void setType(bool isUpdate);
+    void setAutoId(const QString& id);
+    void setComponentInfo(const QStringList& info);
 
 private slots:
     void on_btn_ok_clicked();

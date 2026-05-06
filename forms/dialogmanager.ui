@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>778</width>
+    <width>876</width>
     <height>539</height>
    </rect>
   </property>
@@ -136,6 +136,19 @@
        </property>
        <property name="text">
         <string>删除元件</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_reorder">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>重新排序</string>
        </property>
       </widget>
      </item>

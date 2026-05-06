@@ -123,8 +123,12 @@ void DialogManager::on_le_searchBoxName_textChanged(const QString &value)
 
 void DialogManager::on_btn_import_clicked()
 {
+    // 获取当前最大编号 + 1
+    QString nextId = SqlManager::getInstance()->getNextComponentId();
+    
     DialogUpdate dialogUpdate;
     dialogUpdate.setType(false);
+    dialogUpdate.setAutoId(nextId);  // 传递自动生成的编号
     dialogUpdate.exec();
     initPage();
     qDebug() << sender()->objectName();
@@ -132,9 +136,24 @@ void DialogManager::on_btn_import_clicked()
 
 void DialogManager::on_btn_update_clicked()
 {
+    int row = ui->tableView->currentIndex().row();
+    if (row < 0) {
+        QMessageBox::information(this, "信息", "请先选中要修改的元件");
+        return;
+    }
+    
+    // 获取选中元件的所有信息
+    QStringList componentInfo;
+    for (int i = 0; i < 11; i++) {
+        componentInfo.append(itemModel.item(row, i)->text());
+    }
+    
     DialogUpdate dialogUpdate;
-    dialogUpdate.setType(true);
+    dialogUpdate.setType(true);  // true 表示修改模式
+    dialogUpdate.setComponentInfo(componentInfo);  // 传递元件信息
     dialogUpdate.exec();
+    
+    // 刷新列表
     initPage();
     qDebug() << sender()->objectName();
 }
@@ -156,4 +175,9 @@ void DialogManager::on_btn_delete_clicked()
     }
 
     qDebug() << sender()->objectName();
+}
+void DialogManager::on_btn_reorder_clicked()
+{
+    SqlManager::getInstance()->reorderIds();
+    initPage();
 }

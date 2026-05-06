@@ -28,6 +28,7 @@ private slots:
     void on_btn_import_clicked();
     void on_btn_update_clicked();
     void on_btn_delete_clicked();
+    void on_btn_reorder_clicked();
 
 private:
     Ui::DialogManager *ui;
