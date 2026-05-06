@@ -5,7 +5,7 @@
 #include <QtSql/QSqlError>
 #include <QtSql/QSqlRecord>
 #include <QStringList>
-#include <QSettings>
+#include "INIReader.h"
 
 SqlManager *SqlManager::instance = nullptr;
 
@@ -18,17 +18,29 @@ SqlManager::~SqlManager()
 
 }
 
-bool SqlManager::init() {
-
-    QString path;
-    QSettings *configs = new QSettings("config/config.ini", QSettings::IniFormat);
-    path = configs->value("url/db").toString();
-    delete configs;
-
+bool SqlManager::init() 
+{
+    // 使用 INIReader 读取配置
+    INIReader reader("config/config.ini");
+    
+    if (reader.ParseError() != 0) {
+        qDebug() << "Error parsing config/config.ini, line:" << reader.ParseError();
+        return false;
+    }
+    
+    std::string dbPath = reader.Get("url", "db", "");
+    QString path = QString::fromStdString(dbPath);
+    
+    if (path.isEmpty()) {
+        qDebug() << "Database path not found in config file";
+        return false;
+    }
+    
     qDebug() << QSqlDatabase::drivers();
     m_db = QSqlDatabase::addDatabase("QSQLITE");
-    m_db.QSqlDatabase::setDatabaseName(path);
+    m_db.setDatabaseName(path);
     qDebug() << path;
+    
     return m_db.open();
 }
 

@@ -26,6 +26,8 @@ private:
     Ui::DialogUpdate *ui;
     int m_id = -1;
     bool m_isUpdate = false;
+
+    void initComboBoxFromConfig();
 };
 
 #endif // DIALOGUPDATE_H

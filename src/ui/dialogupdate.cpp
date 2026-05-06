@@ -1,12 +1,16 @@
 #include "dialogupdate.h"
 #include "ui_dialogupdate.h"
 #include "SqlManager.h"
+#include <QDebug>
+#include "ini.h"
+#include "INIREader.h"
 
 DialogUpdate::DialogUpdate(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DialogUpdate)
 {
     ui->setupUi(this);
+    initComboBoxFromConfig();
 }
 
 DialogUpdate::~DialogUpdate()
@@ -83,4 +87,40 @@ void DialogUpdate::on_btn_ok_clicked()
 void DialogUpdate::on_btn_cancel_clicked()
 {
     this->hide();
+}
+
+void DialogUpdate::initComboBoxFromConfig()
+{
+    // 使用 INIReader 读取配置文件
+    INIReader reader("config/config.ini");
+    
+    if (reader.ParseError() != 0) {
+        qDebug() << "Error parsing config file";
+        return;
+    }
+    
+    // 读取配置，Get 的参数是 (section, key, default_value)
+    std::string boxNamesStr = reader.Get("PATH", "boxName", "");
+    std::string lineNumbersStr = reader.Get("PATH", "lineNumber", "");
+    std::string columnNumbersStr = reader.Get("PATH", "columnNumber", "");
+    
+    QString boxNames = QString::fromStdString(boxNamesStr);
+    QString lineNumbers = QString::fromStdString(lineNumbersStr);
+    QString columnNumbers = QString::fromStdString(columnNumbersStr);
+    
+    qDebug() << "boxNames:" << boxNames;
+    qDebug() << "lineNumbers:" << lineNumbers;
+    qDebug() << "columnNumbers:" << columnNumbers;
+    
+    if (!boxNames.isEmpty()) {
+        ui->cb_boxName->addItems(boxNames.split(","));
+    }
+    
+    if (!lineNumbers.isEmpty()) {
+        ui->cb_lineNumber->addItems(lineNumbers.split(","));
+    }
+    
+    if (!columnNumbers.isEmpty()) {
+        ui->cb_colimnNumber->addItems(columnNumbers.split(","));
+    }
 }

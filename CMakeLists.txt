@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(ToolBox LANGUAGES CXX)
+project(ToolBox LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_BUILD_TYPE Release)
@@ -40,6 +40,7 @@ include_directories(
     ${FORMS_DIR}
     ${INCLUDE_DIR}
     ${INCLUDE_DIR}/ui
+    ${INCLUDE_DIR}/utils
     ${INCLUDE_DIR}/manager
 )
 
@@ -50,6 +51,7 @@ link_directories(
 
 file(GLOB_RECURSE SRC_FILES
     "${SOURCE_DIR}/*.c*"
+    "${SOURCE_DIR}/utils/*.c*"
 )
 
 file (GLOB_RECURSE INC_FILES
@@ -65,6 +67,14 @@ file (GLOB_RECURSE RES_FILES
     "${RES_DIR}/*.qrc"
     "${RES_DIR}/*.rc"
 )
+
+# 强制添加 ini.c
+if(EXISTS "${SOURCE_DIR}/utils/ini.c")
+    list(APPEND SRC_FILES "${SOURCE_DIR}/utils/ini.c")
+    message(STATUS "Found ini.c: ${SOURCE_DIR}/utils/ini.c")
+else()
+    message(STATUS "ini.c not found at ${SOURCE_DIR}/utils/ini.c")
+endif()
 
 if (WIN32)
 source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${SRC_FILES})
@@ -95,7 +105,7 @@ endif()
 
 
 if (WIN32) 
-    add_executable(${PROJECT_NAME} WIN32 ${SRC_FILES} ${INC_FILES} ${FORMS_FILES} ${RES_FILES})
+    add_executable(${PROJECT_NAME} ${SRC_FILES} ${INC_FILES} ${FORMS_FILES} ${RES_FILES})
 elseif(UNIX)
     add_executable(${PROJECT_NAME} ${SRC_FILES} ${INC_FILES} ${FORMS_FILES} ${RES_FILES})
 endif()
@@ -119,8 +129,8 @@ target_link_libraries(${PROJECT_NAME}
     ${QT_QTSQL_LIBRARIES}
 )
 
-# out set
-set (OUT_BIN ${CMAKE_BINARY_DIR})
+SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/output)
 
-file(COPY config/config.ini DESTINATION config)
-file(COPY db/components.db DESTINATION db)
+file(COPY ${CMAKE_SOURCE_DIR}/config DESTINATION ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_BUILD_TYPE})
+file(COPY ${CMAKE_SOURCE_DIR}/db DESTINATION ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_BUILD_TYPE})
+file(COPY ${FFMPEG_COPY_DLL} DESTINATION ${EXECUTABLE_OUTPUT_PATH}/${CMAKE_BUILD_TYPE})
